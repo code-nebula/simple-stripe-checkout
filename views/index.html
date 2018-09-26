@@ -1,0 +1,27 @@
+{% set title = 'Stripe Checkout Form Setup' %}
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Passing parameters from Stripe Checkout Form</h2>
+    <div class="image-container">
+        <img class="image-placeholder" src="./../assets/image-placeholder.png"/>
+        <p>$25.00</p>
+    </div>
+    <form action="/charge" method="POST">
+        <script
+            src="https://checkout.stripe.com/checkout.js"
+            class="stripe-button"
+            data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+            data-allow-remember-me="true"
+            data-billing-address="true"
+            data-shipping-address="true"
+            data-name="Your Website Name"
+            data-description="1 Product ($25.00)"
+            data-amount="2500"
+            data-image="./../assets/image-placeholder-cropped.png"
+            data-label="Buy this Product!"
+            data-panel-label="Purchase"
+            >
+        </script>
+    </form>
+{% endblock %}

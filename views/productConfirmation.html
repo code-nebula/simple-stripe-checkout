@@ -1,0 +1,30 @@
+{% set title = 'Custom Form' %}
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h2>Your Order Has Been Received!</h2>
+<p>Once your product has been delivered, we will notify you via email.</p>
+
+<hr> 
+
+<div class="signup-form">
+    <form action="/newsletterSignup" method="POST">
+        <div class="signup-field">
+            <label>Name</label>
+            <input class="signup-text" placeholder="Your Name" name="name" value="{{ name }}"/>
+        </div>
+    
+        <div class="signup-field">
+            <label>Email</label>
+            <input class="signup-text" placeholder="Email" name="email" value="{{ email }}" />
+        </div>
+        
+        <div class="signup-field">
+            <input class="signup-button" type="submit" value="Sign up for our weekly newsletter!">
+        </div>
+    </form>
+</div>
+
+{% endblock %}
